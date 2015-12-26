@@ -4,7 +4,8 @@
 import sys
 import time
 from random import randint
-
+from colorama import *
+init()
 li ={'A':[  "........#.......",
             ".......#$$......",
             "......#.$$$.....",
@@ -300,7 +301,7 @@ li ={'A':[  "........#.......",
             "........$$......",
             "........$$......",
             "........$$......",
-            "....$$$$$$$$$$.."
+            "...$$$$$$$$$$$.."
          ],
      '2':[
             "......####......",
@@ -403,25 +404,72 @@ li ={'A':[  "........#.......",
             ".....$$$$$$....."
          ],
      ' ':[
-"................",         
-"................",
-"................",
-"....@@.....@@...",
-"....@@.....@@...",
-"................",
-"....%%%%%%%%%...",
-".....%.....%....",
-"......%%%%%.....",
-"................",
-"................"
-         ]
+            "................",         
+            "................",
+            "................",
+            "....@@.....@@...",
+            "....@@.....@@...",
+            "................",
+            "....%%%%%%%%%...",
+            ".....%.....%....",
+            "......%%%%%.....",
+            "................",
+            "................"
+             ]
 }
+# Functions
+def printe(ch):
+    col = randint(1,7)
+    if col == 1:
+        ss = Fore.RED+ch
+    elif col == 2:
+        ss = Fore.BLUE+ch
+    elif col == 3:
+        ss = Fore.GREEN+ch
+    elif col == 4:
+        ss = Fore.YELLOW+ch
+    elif col == 5:
+        ss = Fore.CYAN+ch
+    elif col == 6:
+        ss = Fore.MAGENTA+ch
+    elif col == 7:
+        ss = Fore.WHITE+ch
+    sys.stdout.write(ss)
+    sys.stdout.flush()
+    return
 count = 1
+char_list = [chr(i) for i in xrange(127)]
+len_char = len(char_list)
+i = 0
+while(i < 80000):
+    n = randint(0,len_char-1)
+    ch = char_list[n]
+    printe(ch)
+    i = i + 1
+
+print "\n\n\n"
+time.sleep(3)
+start = "\t\t\t\t\t\t\t\tDid You Understand What happend above...?\n\n\n\n\t\t\t\t\t\t\t\tJust as this Many things Happen in our life\n\n\t\t\t\t\t\t\t\tAfter A Long Year 2015...\n\n\t\t\t\t\t\t\t\tHere we wish you a wonderful New Year 2016.. \n\n\t\t\t\t\t\t\t\t\tWait a second..\n\n"
+
+for cha in start:
+    sys.stdout.write(Fore.CYAN+cha)
+    sys.stdout.flush()
+    time.sleep(.2)
+    sys.stdout.write(' ')
+    sys.stdout.flush()
+
+print '\n\n\n\n'
+time.sleep(5)
 wish  = "HAPPY NEW YEAR"
+nos = [8,5,12,13,18,5,10,7,17,10,18,7,5,15]
+colors =[4,5,6,7,1,2,3,2,3,1,4,5,6,7]
+r = 0
 for ch in wish:
     sys.stdout.write('\n')
     sys.stdout.flush()
-    numb = randint(5,19)
+    numb = nos[r]
+    col = colors[r]
+    r = r + 1
     for st in li[ch]:
         i = 0
         while(i < numb):
@@ -430,14 +478,91 @@ for ch in wish:
             i = i + 1
         for ch in st:
             if not (ch == '.'):
-                ss = ch
+                if col == 1:
+                    ss = Fore.RED+ch
+                elif col == 2:
+                    ss = Fore.BLUE+ch
+                elif col == 3:
+                    ss = Fore.GREEN+ch
+                elif col == 4:
+                    ss = Fore.YELLOW+ch
+                elif col == 5:
+                    ss = Fore.CYAN+ch
+                elif col == 6:
+                    ss = Fore.MAGENTA+ch
+                elif col == 7:
+                    ss = Fore.WHITE+ch
+                    
             else:
                 ss = ' '
             sys.stdout.write(ss)
             sys.stdout.flush()
-            time.sleep(.02)
+            time.sleep(.03)
         sys.stdout.write('\n')
         sys.stdout.flush()
 
-    
+# Printing of 2016
+year = '2016'
+
+print '\n\n\n'
+
+tot =15
+i = 0
+while(i < tot):
+    j = 0
+    while(j < 220):
+        ch = ''
+        if(i<3 or i>=12):
+            if(j<=20 or j >=200):
+                ch = ' '
+            else:
+                ch = '%'
+        else:
+            if(j<=20 or j >=200):
+                ch = ' '
+            elif(j>=20 and j<=70):
+                ch = '%'
+            elif(j<=200 and j>=150):
+                 ch = '%'
+            elif(j>=73 and j<=88):
+                rs=li['2'][i-3][j-73]
+                if(rs=='.'):
+                    ch = '%'
+                else:
+                    ch = ' '
+            elif(j>=93 and j<=108):
+                rs=li['0'][i-3][j-93]
+                if(rs=='.'):
+                    ch = '%'
+                else:
+                    ch = ' '
+            elif(j>=113 and j<=128):
+                rs=li['1'][i-3][j-113]
+                if(rs=='.'):
+                    ch = '%'
+                else:
+                    ch = ' '
+            elif(j>=133 and j<=148):
+                rs=li['6'][i-3][j-133]
+                if(rs=='.'):
+                    ch = '%'
+                else:
+                    ch = ' '
+            else:
+                ch = '%'
+        printe(ch)
+        time.sleep(.03)
+        j =j + 1    
+    sys.stdout.flush()
+    i = i + 1
+print '\n\n\n'
+last = "\t\t\t\t\t\t\t\tONCE AGAIN WISH YOU A ROCKING YEAR AHEAD"
+for cha in last:
+    sys.stdout.write(Fore.YELLOW+cha)
+    sys.stdout.flush()
+    time.sleep(.2)
+    sys.stdout.write(' ')
+    sys.stdout.flush()
+print '\n\n\n\n\n\n\n\n\n\n'
+
 
