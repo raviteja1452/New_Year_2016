@@ -449,7 +449,7 @@ while(i < 80000):
 
 print "\n\n\n"
 time.sleep(3)
-start = "\t\t\t\t\t\t\t\tDid You Understand What happend above...?\n\n\n\n\t\t\t\t\t\t\t\tJust as this Many things Happen in our life\n\n\t\t\t\t\t\t\t\tAfter A Long Year 2015...\n\n\t\t\t\t\t\t\t\tHere we wish you a wonderful New Year 2016.. \n\n\t\t\t\t\t\t\t\t\tWait a second..\n\n"
+start = "\t\t\t\t\t\t\tDid You Understand What happend above...?\n\n\n\n\t\t\t\t\t\t\tJust as this Many things Happen in our life\n\n\t\t\t\t\t\t\tAfter A Long Year 2015...\n\n\t\t\t\t\t\t\tHere we wish you a wonderful New Year 2016.. \n\n\t\t\t\t\t\t\t\tWait a second..\n\n"
 
 for cha in start:
     sys.stdout.write(Fore.CYAN+cha)
@@ -510,40 +510,37 @@ tot =15
 i = 0
 while(i < tot):
     j = 0
-    while(j < 220):
+    while(j < 195):
         ch = ''
         if(i<3 or i>=12):
-            if(j<=20 or j >=200):
-                ch = ' '
-            else:
-                ch = '%'
+            ch = '%'
         else:
-            if(j<=20 or j >=200):
-                ch = ' '
-            elif(j>=20 and j<=70):
+            if(j<=2 or j >=193):
                 ch = '%'
-            elif(j<=200 and j>=150):
+            elif(j>2 and j<=57):
+                ch = '%'
+            elif(j<193 and j>=138):
                  ch = '%'
-            elif(j>=73 and j<=88):
-                rs=li['2'][i-3][j-73]
+            elif(j>=60 and j<=75):
+                rs=li['2'][i-3][j-60]
                 if(rs=='.'):
                     ch = '%'
                 else:
                     ch = ' '
-            elif(j>=93 and j<=108):
-                rs=li['0'][i-3][j-93]
+            elif(j>=80 and j<=95):
+                rs=li['0'][i-3][j-80]
                 if(rs=='.'):
                     ch = '%'
                 else:
                     ch = ' '
-            elif(j>=113 and j<=128):
-                rs=li['1'][i-3][j-113]
+            elif(j>=100 and j<=115):
+                rs=li['1'][i-3][j-100]
                 if(rs=='.'):
                     ch = '%'
                 else:
                     ch = ' '
-            elif(j>=133 and j<=148):
-                rs=li['6'][i-3][j-133]
+            elif(j>=120 and j<=135):
+                rs=li['6'][i-3][j-120]
                 if(rs=='.'):
                     ch = '%'
                 else:
@@ -551,7 +548,7 @@ while(i < tot):
             else:
                 ch = '%'
         printe(ch)
-        time.sleep(.03)
+        time.sleep(.015)
         j =j + 1    
     sys.stdout.flush()
     i = i + 1
@@ -560,7 +557,7 @@ last = "\t\t\t\t\t\t\t\tONCE AGAIN WISH YOU A ROCKING YEAR AHEAD"
 for cha in last:
     sys.stdout.write(Fore.YELLOW+cha)
     sys.stdout.flush()
-    time.sleep(.2)
+    time.sleep(.03)
     sys.stdout.write(' ')
     sys.stdout.flush()
 print '\n\n\n\n\n\n\n\n\n\n'
